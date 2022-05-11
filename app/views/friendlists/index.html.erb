@@ -1,0 +1,38 @@
+<%if user_signed_in?%>
+<table class="table table-striped table-hover">
+	<thead>
+		<tr class="table-dark">
+			<th>Name</th>
+			<th>Email</th>
+			<th>Phone</th>
+			<th>Twitter</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @friendlists.each do |friendlist| %>
+		<%if friendlist.user == current_user%>
+		<tr>
+			<td>
+				<%= link_to friendlist.first_name + " " + friendlist.last_name, friendlist %>
+			</td>
+			<td>
+				<%= friendlist.email %>
+			</td>
+			<td>
+				<%= friendlist.phone %>
+			</td>
+			<td>
+				<%= friendlist.twitter %>
+			</td>
+
+		</tr>
+		<%end%>
+		<%end%>
+	</tbody>
+</table>
+<br>
+
+<%= link_to 'New friendlist', new_friendlist_path, class:"btn btn-outline-success"%>
+<%else%>
+	<h1>Welcome to the Friend's App...</h1>
+<%end%>

@@ -1,0 +1,14 @@
+<h1>Editing friendlist</h1>
+<br>
+<%= render "form", friendlist: @friendlist %>
+
+<br>
+
+<div>
+<p>
+  <%= link_to 'Show', @friendlist, class:"btn btn-dark" %> 
+  
+  <%= link_to "Back", friendlists_path, class:"btn btn-dark" %>
+</p>
+  <%= button_to 'Delete',@friendlist, class:"btn btn-danger",method: :delete,data: {confirm: 'Are you sure about that ?'} %> 
+</div>

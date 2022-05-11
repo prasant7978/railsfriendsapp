@@ -1,0 +1,21 @@
+<div id="<%= dom_id friendlist %>">
+
+  <div class="jumbotron">
+  <h1 class="display-4">
+    <%= friendlist.first_name %>
+    <%= friendlist.last_name %>
+  </h1>
+  <p class="lead">
+    <%= friendlist.email %> | 
+    <%= friendlist.phone %> | 
+    <%= friendlist.twitter %>
+  </p>
+  <hr class="my-4">
+  <p>
+    <%= link_to 'Edit', edit_friendlist_path(friendlist),class:"btn btn-dark" %>
+
+    <%= link_to "Back", friendlists_path, class:"btn btn-dark" %> 
+    <%= button_to 'Delete',@friendlist, class:"btn btn-danger",method: :delete,data: {confirm: 'Are you sure about that ?'} %> 
+  </p>
+  </div>
+</div>
